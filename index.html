@@ -11,7 +11,7 @@
 body{margin:0;background:#F3F5F7}
 a{color:#0B5E78}a:hover{color:#083F51}
 </style>
-<style>html{scroll-behavior:smooth}</style>
+<style>html{scroll-behavior:smooth}#deck-viewer button:hover{opacity:.85}#deck-viewer button:focus-visible{outline:3px solid #7FD1E6;outline-offset:2px}</style>
 </head>
 <body>
 <div style="font-family: 'IBM Plex Sans', system-ui, sans-serif; color: #14202B; background: #F3F5F7; line-height: 1.55; font-size: 17px">
@@ -233,23 +233,23 @@ a{color:#0B5E78}a:hover{color:#083F51}
 <h3 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px">2. From smart meter data to a habit that sticks</h3>
 <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; padding: 6px 12px; border-radius: 999px; background: #E3EEF2; color: #0B5E78">Data analysis · Behaviour change</span>
 </div>
-<p style="margin: 0; font-size: 18px; color: #2E3E4A; max-width: 860px">After moving into a Sydney apartment I'd been put on a demand tariff: one 30-minute spike between 2 and 8 pm on a weekday sets a charge for the whole month. Working with an AI assistant, I analysed nine months of my half-hourly smart meter data to find what was driving the bill, then turned the findings into something easy to follow.</p>
+<p style="margin: 0; font-size: 18px; color: #2E3E4A; max-width: 860px">Working with an AI assistant, I built a repeatable way to analyse half-hourly smart meter data, first on nine months of readings from my previous home. When I moved to a Sydney apartment on a demand tariff, where one 30-minute spike between 2 and 8 pm on a weekday sets a charge for the whole month, I used the same method again, turned the findings into a one-page schedule, and tracked the next three bills.</p>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px">
 <div style="background: #F3F5F7; border-radius: 10px; padding: 20px; display: flex; flex-direction: column; gap: 4px">
 <span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 30px; color: #0B5E78">13,000+</span>
-<span style="font-size: 15px; color: #4A5B68">Half-hourly readings across 274 days</span>
+<span style="font-size: 15px; color: #4A5B68">Half-hourly readings over 274 days at my previous home</span>
 </div>
 <div style="background: #F3F5F7; border-radius: 10px; padding: 20px; display: flex; flex-direction: column; gap: 4px">
 <span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 30px; color: #0B5E78">~7×</span>
-<span style="font-size: 15px; color: #4A5B68">Overnight usage spike in a week of wet weather, likely the heating</span>
+<span style="font-size: 15px; color: #4A5B68">Overnight usage spike in a wet week there, likely the heating</span>
 </div>
 <div style="background: #F3F5F7; border-radius: 10px; padding: 20px; display: flex; flex-direction: column; gap: 4px">
-<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 30px; color: #0B5E78">18.6%</span>
-<span style="font-size: 15px; color: #4A5B68">Lower peak demand on the next bill</span>
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 30px; color: #0B5E78">&lt;2 kW</span>
+<span style="font-size: 15px; color: #4A5B68">Peak demand at my current apartment in every bill since, down from 2.37 kW</span>
 </div>
 <div style="background: #F3F5F7; border-radius: 10px; padding: 20px; display: flex; flex-direction: column; gap: 4px">
-<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 30px; color: #0B5E78">~$90/yr</span>
-<span style="font-size: 15px; color: #4A5B68">Modelled saving from switching to a time-of-use plan</span>
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 30px; color: #0B5E78">~6 kWh</span>
+<span style="font-size: 15px; color: #4A5B68">A day throughout: the same energy, used at better times, $0 spent</span>
 </div>
 </div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px">
@@ -263,7 +263,7 @@ a{color:#0B5E78}a:hover{color:#083F51}
 </div>
 <div style="display: flex; flex-direction: column; gap: 6px">
 <span style="font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 0.06em; color: #5B6B78">The change lesson</span>
-<p style="margin: 0">Analysis doesn't change behaviour. A clear, simple rule on the fridge does. Same principle as any frontline rollout.</p>
+<p style="margin: 0">Analysis doesn't change behaviour. A clear, simple rule on the fridge does. And a method that works in a second home is one that scales, the same principle as any frontline rollout.</p>
 </div>
 </div>
 <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: stretch">
@@ -273,7 +273,17 @@ a{color:#0B5E78}a:hover{color:#083F51}
 </a>
 <figcaption style="font-size: 14px; color: #4A5B68">The one-page cheat sheet that changed the habit. Select it to open the full PDF.</figcaption>
 </figure>
-<div role="img" aria-label="Output placeholder" style="flex: 1 1 320px; min-height: 200px; border-radius: 10px; border: 1.5px dashed #9FB3C2; background: #F8FAFB; display: flex; align-items: center; justify-content: center; color: #5B6B78; font-size: 15px; text-align: center; padding: 0 16px">[Chart: normal nights vs the August spike]</div>
+<figure id="deck-viewer" aria-label="Slide viewer: Ask better questions of your energy data" style="flex: 2 1 480px; min-width: 0; margin: 0; display: flex; flex-direction: column; gap: 8px">
+<div style="border-radius: 10px; overflow: hidden; border: 1px solid #D5DDE3; background: #14202B; aspect-ratio: 16 / 9">
+<img id="deck-img" src="slides/slide-01.jpg" alt="Slide 1 of 13: Ask better questions of your energy data" style="display: block; width: 100%; height: 100%; object-fit: contain">
+</div>
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
+<button id="deck-prev" type="button" aria-label="Previous slide" style="min-height: 44px; padding: 0 18px; border-radius: 8px; border: 1.5px solid #14202B; background: #FFFFFF; color: #14202B; font: inherit; font-weight: 600; cursor: pointer">← Previous</button>
+<span id="deck-count" aria-live="polite" style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #4A5B68">1 / 13</span>
+<button id="deck-next" type="button" aria-label="Next slide" style="min-height: 44px; padding: 0 18px; border-radius: 8px; border: 1.5px solid #14202B; background: #14202B; color: #F3F5F7; font: inherit; font-weight: 600; cursor: pointer">Next →</button>
+</div>
+<figcaption style="font-size: 14px; color: #4A5B68">The full how-to guide, built from this project. Use the arrows to flick through, or download it below.</figcaption>
+</figure>
 </div>
 <div style="background: #14202B; color: #F3F5F7; border-radius: 12px; padding: 28px; display: flex; flex-direction: column; gap: 16px">
 <h4 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 20px">The template: five questions anyone can ask AI about their meter data</h4>
@@ -285,8 +295,8 @@ a{color:#0B5E78}a:hover{color:#083F51}
 <li>What should I change first?</li>
 </ol>
 <div style="display: flex; flex-wrap: wrap; gap: 12px">
-<a href="#" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; border-radius: 8px; background: #7FD1E6; color: #14202B; font-weight: 600; text-decoration: none">Download the guide (PDF)</a>
-<a href="https://docs.google.com/presentation/d/1Ba0UouCbIQzHdsIcxAYAQfKnV2D3-veuiWwaCMG7xUY/edit?usp=sharing" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; border-radius: 8px; border: 1.5px solid #5B7385; color: #F3F5F7; font-weight: 600; text-decoration: none">View the slide pack</a>
+<a href="files/energy-guide.pdf" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; border-radius: 8px; background: #7FD1E6; color: #14202B; font-weight: 600; text-decoration: none">Download the guide (PDF)</a>
+<a href="#deck-viewer" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; border-radius: 8px; border: 1.5px solid #5B7385; color: #F3F5F7; font-weight: 600; text-decoration: none">Flick through the slides</a>
 </div>
 </div>
 </article>
@@ -363,5 +373,37 @@ a{color:#0B5E78}a:hover{color:#083F51}
 </footer>
 
 </div>
+<script>
+(function () {
+  var slides = [{"src": "slides/slide-01.jpg", "alt": "Slide 1 of 13: Ask better questions of your energy data"}, {"src": "slides/slide-02.jpg", "alt": "Slide 2 of 13: Why it matters: your bill shows a total, your meter records every half-hour"}, {"src": "slides/slide-03.jpg", "alt": "Slide 3 of 13: Before you start: you need three things"}, {"src": "slides/slide-04.jpg", "alt": "Slide 4 of 13: The framework: five questions, asked in order"}, {"src": "slides/slide-05.jpg", "alt": "Slide 5 of 13: Step 1: is the data healthy?"}, {"src": "slides/slide-06.jpg", "alt": "Slide 6 of 13: Step 2: what is my baseload?"}, {"src": "slides/slide-07.jpg", "alt": "Slide 7 of 13: Step 3: where are the spikes?"}, {"src": "slides/slide-08.jpg", "alt": "Slide 8 of 13: Step 4: does anything look upside down?"}, {"src": "slides/slide-09.jpg", "alt": "Slide 9 of 13: Step 5: what should I change first?"}, {"src": "slides/slide-10.jpg", "alt": "Slide 10 of 13: Check the AI's work. It will make mistakes."}, {"src": "slides/slide-11.jpg", "alt": "Slide 11 of 13: Make it stick: turn the findings into one page"}, {"src": "slides/slide-12.jpg", "alt": "Slide 12 of 13: What changed over the next three bills"}, {"src": "slides/slide-13.jpg", "alt": "Slide 13 of 13: Your turn: start this week"}];
+  var i = 0;
+  var img = document.getElementById('deck-img');
+  var count = document.getElementById('deck-count');
+  var box = document.getElementById('deck-viewer');
+  if (!img || !count || !box) return;
+  function show(n) {
+    i = (n + slides.length) % slides.length;
+    img.src = slides[i].src;
+    img.alt = slides[i].alt;
+    count.textContent = (i + 1) + ' / ' + slides.length;
+    var next = new Image(); next.src = slides[(i + 1) % slides.length].src;
+  }
+  document.getElementById('deck-prev').addEventListener('click', function () { show(i - 1); });
+  document.getElementById('deck-next').addEventListener('click', function () { show(i + 1); });
+  box.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight') { show(i + 1); e.preventDefault(); }
+    if (e.key === 'ArrowLeft') { show(i - 1); e.preventDefault(); }
+  });
+  var x0 = null;
+  img.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+  img.addEventListener('touchend', function (e) {
+    if (x0 === null) return;
+    var dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 40) show(dx < 0 ? i + 1 : i - 1);
+    x0 = null;
+  }, { passive: true });
+  show(0);
+})();
+</script>
 </body>
 </html>
